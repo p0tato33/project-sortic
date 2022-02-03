@@ -1,6 +1,6 @@
 #include "sortic.h"
 
-void run_programm(string str, vector <int> &a, vector <int> &b){
+void check_func(string str, vector <int> &a, vector <int> &b){
     if (str == "sa")
         sa(a);
     else if (str == "sb")
