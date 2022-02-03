@@ -22,3 +22,12 @@ void check_func(string str, vector <int> &a, vector <int> &b){
     else if (str == "rrr")
         rrr(a, b);
 }
+
+string verdict(vector <int> &a){
+    string message = "OK";
+    for(int i = 1; i < a.size(); i++){
+        if(a[i] < a[i - 1])
+            message = "KO";
+    }
+    return message;
+}
