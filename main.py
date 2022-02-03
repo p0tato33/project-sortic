@@ -1,7 +1,8 @@
 #include "sortic.h"
 
 int main(){
-  
+    system("cls");
+    itc_SetColor(11,1);
     vector <int> a, b;
     string m = "";
     getline(cin, m);
@@ -10,36 +11,41 @@ int main(){
         a.push_back(ToInt(m));
         getline(cin, m);
     }
+    itc_SetColor(3, 1);
     getline(cin, m);
     while(m != "*")
     {
-    if (str == "sa")
+    if (m == "sa")
         sa(a);
-    else if (str == "sb")
+    else if (m == "sb")
         sb(b);
-    else if (str == "pa")
+    else if (m == "pa")
         pa(a, b);
-    else if (str == "pb")
+    else if (m == "pb")
         pb(a, b);
-    else if (str == "ra")
+    else if (m == "ra")
         ra(a);
-    else if (str == "rb")
+    else if (m == "rb")
         rb(b);
-    else if (str == "rr")
+    else if (m == "rr")
         rr(a, b);
-    else if (str == "rra")
+    else if (m == "rra")
         rra(a);
-    else if (str == "rrb")
+    else if (m == "rrb")
         rrb(b);
-    else if (str == "rrr")
+    else if (m == "rrr")
         rrr(a, b);
-}
-string verdict(vector <int> &a){
-    string message = "OK";
-    for(int i = 1; i < a.size(); i++){
-        if(a[i] < a[i - 1])
-            message = "KO";
+    else
+        cout << "unkwown command"<<endl;
+    cout<<"a: ";
+    vivod(a);
+    cout<<endl<<"b: ";
+    vivod(b);
+    cout<<endl;
+    getline(cin, m);
     }
-    return message;
-    }
+    itc_SetColor(12, 1);
+    cout<<verdict(a);
+    return 0;
 }
+
